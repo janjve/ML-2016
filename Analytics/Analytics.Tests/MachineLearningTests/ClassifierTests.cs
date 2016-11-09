@@ -7,32 +7,30 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.IO;
 using Analytics.Common;
 using Analytics.MachineLearning.Classifiers;
+using Analytics.Tests.Helpers;
 using Shouldly;
 
 namespace Analytics.Tests.MachineLearningTests
 {
     [TestClass]
-    public class KNearestNeighborsTests
+    public class ClassifierTests
     {
-        private List<double[]> LoadIris()
-        {
-            // Quick and dirty.
-            var data = new List<double[]>();
-            var lines = File.ReadAllLines(@"Data\iris.data.txt");
-            var irisMap = new Dictionary<string, string> { { "Iris-setosa", "0.0" }, { "Iris-versicolor", "1.0" }, { "Iris-virginica", "2.0" } };
-
-            foreach (var record in lines.Select(line => line.Split(',')))
-            {
-                record[record.Length - 1] = irisMap[record[record.Length - 1]];
-                data.Add(record.Select(double.Parse).ToArray());
-            }
-            return data;
-        }
 
         [TestMethod]
         public void KNearestNeighborsIrisTest()
         {
-            var data = LoadIris();
+            IrisClassifierTest(new KNearestNeighbors(10));
+        }
+
+        [TestMethod]
+        public void DecisionTreeIrisTest()
+        {
+            IrisClassifierTest(new DecisionTree());
+        }
+
+        private static void IrisClassifierTest(IClassifier classifier)
+        {
+            var data = TestDataset.Iris();
             data.Shuffle(new Random(1));
             var split = (int)(data.Count * 0.8);
             var trainingSet = data.Take(split).ToList();
@@ -40,7 +38,6 @@ namespace Analytics.Tests.MachineLearningTests
                 .Select(x => new Tuple<double[], double>(x.Take(x.Length - 1).ToArray(), x.Last()))
                 .ToList();
 
-            var classifier = new KNearestNeighbors(10);
             classifier.Train(trainingSet);
 
             var correctlyPredicted = 0;
@@ -57,7 +54,6 @@ namespace Analytics.Tests.MachineLearningTests
             var percentCorrect = ((correctlyPredicted + 0.0) / (correctlyPredicted + incorrectlyPredicted));
 
             percentCorrect.ShouldBeGreaterThanOrEqualTo(0.90);
-
         }
     }
 }

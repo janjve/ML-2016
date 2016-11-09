@@ -55,7 +55,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="CommonTests\DistanceFunctionTests.cs" />
-    <Compile Include="MachineLearningTests\KNearestNeighborsTests.cs" />
+    <Compile Include="Helpers\TestDataset.cs" />
+    <Compile Include="MachineLearningTests\ClassifierTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

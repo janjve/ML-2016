@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classifiers\IClassifier.cs" />
+    <Compile Include="Classifiers\DecisionTree.cs" />
     <Compile Include="Classifiers\KNearestNeighbors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
