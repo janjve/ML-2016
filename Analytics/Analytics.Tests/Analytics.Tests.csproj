@@ -54,6 +54,7 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Common\DistanceFunctionTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -61,6 +62,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="MachineLearningTests\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Analytics.Common\Analytics.Common.csproj">
+      <Project>{22065FA4-3DCE-4060-A507-5D409F098B6E}</Project>
+      <Name>Analytics.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">

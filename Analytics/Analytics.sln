@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analytics.Preprocessing", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analytics.ConsoleLauncher", "Analytics.ConsoleLauncher\Analytics.ConsoleLauncher.csproj", "{F7AC76FE-B3F7-4929-B1BF-4FF3CCA23019}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Analytics.Common", "Analytics.Common\Analytics.Common.csproj", "{22065FA4-3DCE-4060-A507-5D409F098B6E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{F7AC76FE-B3F7-4929-B1BF-4FF3CCA23019}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7AC76FE-B3F7-4929-B1BF-4FF3CCA23019}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7AC76FE-B3F7-4929-B1BF-4FF3CCA23019}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22065FA4-3DCE-4060-A507-5D409F098B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22065FA4-3DCE-4060-A507-5D409F098B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22065FA4-3DCE-4060-A507-5D409F098B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22065FA4-3DCE-4060-A507-5D409F098B6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
