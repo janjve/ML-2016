@@ -40,7 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Classifiers\IClassifier.cs" />
+    <Compile Include="Classifiers\KNearestNeighbors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Analytics.Common\Analytics.Common.csproj">
+      <Project>{22065FA4-3DCE-4060-A507-5D409F098B6E}</Project>
+      <Name>Analytics.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

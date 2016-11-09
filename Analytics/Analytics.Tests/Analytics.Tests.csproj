@@ -54,19 +54,26 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Common\DistanceFunctionTests.cs" />
+    <Compile Include="CommonTests\DistanceFunctionTests.cs" />
+    <Compile Include="MachineLearningTests\KNearestNeighborsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="MachineLearningTests\" />
+    <Content Include="Data\iris.data.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Analytics.Common\Analytics.Common.csproj">
       <Project>{22065FA4-3DCE-4060-A507-5D409F098B6E}</Project>
       <Name>Analytics.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Analytics.MachineLearning\Analytics.MachineLearning.csproj">
+      <Project>{19313573-A2F5-4FAA-9E55-C724CBB72433}</Project>
+      <Name>Analytics.MachineLearning</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>
