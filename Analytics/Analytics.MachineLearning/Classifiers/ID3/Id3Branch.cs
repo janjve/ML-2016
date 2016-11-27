@@ -25,5 +25,6 @@ namespace Analytics.MachineLearning.Classifiers.ID3
         {
             return new Id3Leaf { Label = label };
         }
+
     }
 }
