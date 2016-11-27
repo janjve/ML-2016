@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="Classifiers\IClassifier.cs" />
     <Compile Include="Classifiers\ID3\DecisionTree.cs" />
+    <Compile Include="Classifiers\ID3\Id3Branch.cs" />
+    <Compile Include="Classifiers\ID3\Id3Leaf.cs" />
     <Compile Include="Classifiers\ID3\Id3Node.cs" />
     <Compile Include="Classifiers\KNN\KNearestNeighbors.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

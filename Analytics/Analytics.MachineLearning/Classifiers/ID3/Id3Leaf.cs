@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Analytics.MachineLearning.Classifiers.ID3
 {
-    public abstract class Id3Node
+    public class Id3Leaf : Id3Node
     {
-
+        public double Label { get; set; }
     }
 }
