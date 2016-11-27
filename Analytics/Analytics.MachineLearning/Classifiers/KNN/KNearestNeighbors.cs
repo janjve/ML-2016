@@ -1,15 +1,15 @@
 ﻿using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Analytics.Common;
+using static Analytics.Common.DistanceFunction;
 
-namespace Analytics.MachineLearning.Classifiers
+namespace Analytics.MachineLearning.Classifiers.KNN
 {
     public class KNearestNeighbors : IClassifier
     {
         private IList<double[]> _trainingSet;
-        private int _k;
+        private readonly int _k;
 
         public KNearestNeighbors(int k)
         {
@@ -29,17 +29,17 @@ namespace Analytics.MachineLearning.Classifiers
             var kNeighbors = new LinkedList<Tuple<double, double>>();
             foreach (var tRecord in _trainingSet)
             {
-                var distance = DistanceFunction.Euclidean(record, tRecord);
+                var distance = Euclidean(record, tRecord);
                 if (kNeighbors.Count < _k)
                 {
-                    var tuple = new Tuple<double, double>(distance, tRecord[outputIndex]);
+                    var tuple = Tuple.Create(distance, tRecord[outputIndex]);
                     kNeighbors.AddWhere(tuple, x => x.Item1 > distance);
                 }
 
                 else if (kNeighbors.Last().Item1 > distance)
                 {
                     kNeighbors.RemoveLast();
-                    var tuple = new Tuple<double, double>(distance, tRecord[outputIndex]);
+                    var tuple = Tuple.Create(distance, tRecord[outputIndex]);
                     kNeighbors.AddWhereReversed(tuple, x => x.Item1 > distance);
                 }
             }

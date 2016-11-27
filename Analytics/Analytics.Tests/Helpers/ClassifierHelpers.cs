@@ -1,34 +1,17 @@
-﻿using System;
+﻿using Analytics.Common;
+using Analytics.MachineLearning.Classifiers;
+using Shouldly;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.VisualStudio.TestTools.UnitTesting;
-using System.IO;
-using Analytics.Common;
-using Analytics.MachineLearning.Classifiers;
-using Analytics.Tests.Helpers;
-using Shouldly;
 
-namespace Analytics.Tests.MachineLearningTests
+namespace Analytics.Tests.Helpers
 {
-    [TestClass]
-    public class ClassifierTests
+    public static class ClassifierHelpers
     {
-
-        [TestMethod]
-        public void KNearestNeighborsIrisTest()
-        {
-            IrisClassifierTest(new KNearestNeighbors(10));
-        }
-
-        [TestMethod]
-        public void DecisionTreeIrisTest()
-        {
-            IrisClassifierTest(new DecisionTree());
-        }
-
-        private static void IrisClassifierTest(IClassifier classifier)
+        public static void IrisClassifierTest(IClassifier classifier)
         {
             var data = TestDataset.Iris();
             data.Shuffle(new Random(1));

@@ -10,6 +10,7 @@ namespace Analytics.ConsoleLauncher
     {
         public static void Main(string[] args)
         {
+
         }
     }
 }
